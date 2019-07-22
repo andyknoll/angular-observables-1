@@ -1,0 +1,31 @@
+/* andy-display.component.css */
+
+#display {
+    margin: 20px 0px;
+    width: 600px;
+    height: 300px;
+    font-size: 22px;
+    border: 1px solid gray;
+    padding: 10px;
+    overflow: auto;
+}
+
+
+p {
+    font-size: 16px;
+}
+
+td {
+    user-select: none;
+    -webkit-user-select: none;
+    border: 0px solid black;
+}
+
+tr:hover {
+    background-color: #ddd
+}
+
+.col1 { left:   0px; width: 200px; }
+.col2 { left: 200px; width: 100px; }
+.col3 { left: 300px; width: 200px; }
+.col4 { left: 500px; width: 200px; }

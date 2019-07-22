@@ -1,0 +1,58 @@
+<!-- andy-http.component.html -->
+
+<h2>HTTP Requests using Observables and CORS</h2>
+<h4>Andy Knoll - July 2019</h4>
+<br>
+<div id="buttons">
+    <button type="button" (click)="makeRequest1()">Get US States</button>
+    <button type="button" (click)="makeRequest2()">Get random State</button>
+    <button type="button" (click)="showAboutInfo()">About this app</button>
+</div>
+
+<div id="loading-status-wrapper">
+    <div id="loading-status" *ngIf="loading">
+        loading {{reqUrl}}
+    </div>
+</div>
+
+
+
+
+
+<!-- move this to andy-display.component.html -->
+
+
+<div id="display">
+    <div *ngIf="currReq == 1 && data; then thenBlock1"></div>
+    <div *ngIf="currReq == 2 && data; then thenBlock2"></div>
+    <div *ngIf="currReq == 3; then thenBlock3"></div>
+    <ng-template #thenBlock1>
+        <table>
+            <tr *ngFor="let state of data">
+                <td class="col1">{{state.name}}</td>
+                <td class="col2">{{state.abbr}}</td>
+                <td class="col3">{{state.pop}}</td>
+                <td class="col4">&nbsp;</td>
+                <td class="col5">{{state.cap}}</td>
+            </tr>
+        </table>
+    </ng-template>
+    <ng-template #thenBlock2>
+        <h1>{{data[0].name}}</h1>
+        <br>
+        Capital: {{data[0].cap}}
+        <br>
+        Symbol: {{data[0].abbr}}
+        <br>
+        Population: {{data[0].pop}}
+        <br>
+        Square miles: {{data[0].area}}
+    </ng-template>
+    <ng-template #thenBlock3>
+        <h3>{{info.title}}</h3>
+        <br/>
+        <p>{{info.descr1}}</p>
+        <p>{{info.descr2}}</p>
+        <p>{{info.descr3}}</p>
+    </ng-template>    
+</div>

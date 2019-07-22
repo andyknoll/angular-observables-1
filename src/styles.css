@@ -1,0 +1,17 @@
+html {
+  font-family: Tahoma;
+}
+
+.app-container {
+  margin: auto;
+  width: 630px;
+  border: 0px solid black;
+}
+
+button {
+  display: inline-block;
+  height: 40px;
+  width: 200px;
+  margin-right: 10px;
+}
+
